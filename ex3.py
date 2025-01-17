@@ -41,7 +41,6 @@ def visualize_graph(graph):
     plt.show()
 
 
-# Main Program
 vertex_counts = [3, 4, 5, 6, 7, 8, 9, 10]  # for a differnt cadrinality of a set of points we will make attempts to create the triangualation requiered
 num_edges = 5  # we need to do the trianguation with 5 edges
 target_triangles = 3  # we need exactly 3 triangels
