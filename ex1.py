@@ -47,7 +47,7 @@ def find_intersection(polygon, ray_start, ray_end):
         val = (q[1] - p[1]) * (r[0] - q[0]) - (q[0] - p[0]) * (r[1] - q[1])
         if val == 0:
             return 0  # 0 would mean points are colinear
-        return 1 if val > 0 else 2  # Clockwise or counterclockwise
+        return 1 if val > 0 else 2  
 
     def segments_intersect(p1, q1, p2, q2):
        
@@ -82,15 +82,15 @@ def find_intersection(polygon, ray_start, ray_end):
 
         a2 = q2[1] - p2[1]
         b2 = p2[0] - q2[0]
-        c2 = a2 * p2[0] + b2 * p2[1]  # we first compute some helper variable to easier compute the determinatn
+        c2 = a2 * p2[0] + b2 * p2[1]  # we first compute some helper variables to ease the computation of the determinant
 
         determinant = a1 * b2 - a2 * b1
         if determinant == 0:
             return None # usinf the deteminat to find intersection points, if it's 0 the the lines are parallel
 
-        # Calculate intersection point
+
         x = (b2 * c1 - b1 * c2) / determinant
-        y = (a1 * c2 - a2 * c1) / determinant
+        y = (a1 * c2 - a2 * c1) / determinant # finally actually compute the determinant
 
         return x, y
 
@@ -113,7 +113,7 @@ def rotate_ray(polygon, center, radius, steps):
     """
     We rotate a ray around the center point, in our case the camera, ensuring it doesn't exceed the polygon boundary.
     """
-    angle_step = 360 / steps # the step size, the smaller it ease, the more filled the polygon will be
+    angle_step = 360 / steps # the step size, the smaller it is, the more filled the polygon will be
     for step in range(steps):
         angle = math.radians(step * angle_step) 
         ray_end = (center[0] + radius * math.cos(angle), center[1] + radius * math.sin(angle))
@@ -122,7 +122,7 @@ def rotate_ray(polygon, center, radius, steps):
             turtle.penup()
             turtle.goto(center)
             turtle.pendown()
-            turtle.color("green")  # Ray color
+            turtle.color("green")
             turtle.goto(intersection)
             turtle.update()
 
