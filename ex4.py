@@ -62,7 +62,7 @@ def plot_triangulated_polygon(points, edges, coloring):
 
 def main():
     num_points = 7 
-    for i in range(5): # we generate 5 examples, but this number vcould be bigger
+    for i in range(5): # we generate 5 examples, but this number vcould be bigger, again the exam session is not kind on time, and the OS exam won't be passed by itself
         print(f"\nExample {i + 1}:")
         points = generate_random_convex_polygon(num_points)
         edges = define_triangulation(points)
