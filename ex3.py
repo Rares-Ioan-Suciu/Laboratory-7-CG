@@ -42,10 +42,10 @@ def visualize_graph(graph):
 
 
 vertex_counts = [3, 4, 5, 6, 7, 8, 9, 10]  # for a differnt cadrinality of a set of points we will make attempts to create the triangualation requiered
-num_edges = 5  # we need to do the trianguation with 5 edges
-target_triangles = 3  # we need exactly 3 triangels
+num_edges = 5 
+target_triangles = 3  
 for num_vertices in vertex_counts:
-    for i in range(1, 3): # 3 attempt per caridnalty, could be increased
+    for i in range(1, 3): # 3 attempt per caridnalty, could be increased, and would offer more pertinent results but the exam session is not very kind on time
         print("\n" + "-"*50)
         graph, triangle_count = generate_graph_with_constraints(num_vertices, num_edges, target_triangles)
         visualize_graph(graph)
